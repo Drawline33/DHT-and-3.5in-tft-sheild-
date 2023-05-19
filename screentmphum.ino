@@ -1,7 +1,7 @@
-//This file is a mixture of two combine into one you will need the following required files
-// REQUIRES the following Arduino libraries:
-// - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
-// - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
+// wrote this test using the DHT11 sample file and added what I needed from the MCU code and some GFX Adafruit code also 
+// - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library\
+// 
+
 #include <Adafruit_GFX.h> // Hardware-specific library
 #include <MCUFRIEND_kbv.h>
 
@@ -29,7 +29,7 @@ int16_t ht = 16, top = 3, line, lines = 1, scroll;
 DHT dht(DHTPIN, DHTTYPE);
 void setup(){
  
-    Serial.println(F("DHT and RC522 Test!"));
+    Serial.println(F("DHT Test!"));
     Serial.begin(9600);
     dht.begin();
     tft.reset();
@@ -42,7 +42,7 @@ void setup(){
     tft.fillRect(0, 17, 200, 150, RED);
     tft.setTextSize(2);     // System font is 8 pixels.  ht = 8*2=16
     tft.setCursor(100, 0);
-    tft.print("Temprature Inside");
+    tft.print("The Bickering Pigs Inside Weather Box");
  
     tft.setCursor(30, 0);
     
@@ -84,9 +84,7 @@ void loop()
     tft.setCursor(140,90);
     tft.println(f);
     tft.setCursor(140,120);
-    tft.setTextColor(WHITE,BLACK);
-    tft.println("                                  ");
-    
+        
     delay(100);
     
     line++;
