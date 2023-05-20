@@ -47,7 +47,7 @@ void setup(){
     tft.setCursor(30, 0);
     
 
-    tft.setCursor(0,46);
+    tft.setCursor(0,50);
     tft.println("Humidity:");
     tft.setCursor(0,70);
     tft.println("Celcius:");
@@ -78,12 +78,13 @@ void loop()
     tft.setCursor(110, (scroll + top) * ht);
     if (++scroll >= lines) scroll = 0;
     tft.vertScroll(top * ht, lines * ht, (scroll) * ht);
+    tft.setCursor(140,50);
     tft.println(h);
     tft.setCursor(140,70);
     tft.println(t);
     tft.setCursor(140,90);
     tft.println(f);
-    tft.setCursor(140,120);
+    
         
     delay(100);
     
